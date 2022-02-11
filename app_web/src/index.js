@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './app/App';
+import { BrowserRouter } from 'react-router-dom';
+import { StyledEngineProvider } from '@mui/styled-engine'
+import { CssBaseline } from '@mui/material';
 import reportWebVitals from './reportWebVitals';
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StyledEngineProvider injectFirst>
+    <BrowserRouter>
+      <CssBaseline />
+      <App />
+    </BrowserRouter>
+  </StyledEngineProvider>,
   document.getElementById('root')
 );
 
